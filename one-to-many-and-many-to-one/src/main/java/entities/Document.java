@@ -1,11 +1,13 @@
 package entities;
 
+
+import org.hibernate.annotations.OnDelete;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "department")
-public class Deparment {
+@Table(name = "document")
+public class Document {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,9 +15,10 @@ public class Deparment {
 
     private String name;
 
-    // One Departmant to many employee
-    @OneToMany
-    private List<Employee> employees;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private Person person;
+
 
     public long getId() {
         return id;
@@ -33,11 +36,11 @@ public class Deparment {
         this.name = name;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }
