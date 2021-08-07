@@ -11,3 +11,4 @@ This repo is a collection of the JPA Fundamentals examples. You can learn the JP
 - `one-to-one-relation`: Learn how to create one-to-one relationship between entities using `@SecondaryTable` or `@OneToOne` annotation
 - `one-to-many-and-many-to-one`: Learn how to map one-to-many relationship and which methods are the best for the perfomance.
 - `many-to-many`: Learn how to map many-to-many relationship.
+- `association-override`: How to create relationship using `@Embeddable` and `@Embedded`
